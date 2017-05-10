@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Numerics;
 using Windows.ApplicationModel.Store;
 using Windows.UI;
+using Windows.UI.Composition;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Hosting;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using MALClient.Models.Enums;
@@ -30,6 +33,7 @@ namespace MALClient.UWP.UserControls.New
         private bool _animeFiltersExpanded;
         private bool _mangaFiltersExpanded;
         private bool _topCategoriesExpanded;
+        private BlurHelper _blurHelper;
 
         public HamburgerControl()
         {
@@ -40,6 +44,8 @@ namespace MALClient.UWP.UserControls.New
         }
 
         private HamburgerControlViewModel ViewModel => (HamburgerControlViewModel) DataContext;
+
+
 
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
         {
@@ -53,6 +59,9 @@ namespace MALClient.UWP.UserControls.New
                 if (Settings.HamburgerTopCategoriesExpanded)
                     ButtonExpandTopCategoriesOnClick(null, null);
             }
+
+            _blurHelper = new BlurHelper(RootHamburger);
+
 
             //FeedbackImage.Source = Settings.SelectedTheme == (int)ApplicationTheme.Dark
             //    ? new BitmapImage(new Uri("ms-appx:///Assets/GitHub-Mark-Light-120px-plus.png"))

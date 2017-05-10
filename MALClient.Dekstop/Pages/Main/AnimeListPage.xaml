@@ -26,7 +26,7 @@
     </Page.Resources>
 
     <Page.BottomAppBar>
-        <CommandBar x:Name="BottomCommandBar" Background="{ThemeResource BrushAppBars}">
+        <CommandBar x:Name="BottomCommandBar" Background="Transparent" Loaded="BottomCommandBar_OnLoaded">
             <CommandBar.SecondaryCommands>
                 <AppBarButton
                 Visibility="{Binding AppBtnListSourceVisibility,Converter={StaticResource BoolToVisibilityConverter}}"
@@ -127,7 +127,7 @@
             <AppBarButton Icon="Shuffle" Label="Select one at random" Command="{Binding SelectAtRandomCommand}" />
         </CommandBar>
     </Page.BottomAppBar>
-    <Grid Background="{ThemeResource BrushDeepBackground}">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />

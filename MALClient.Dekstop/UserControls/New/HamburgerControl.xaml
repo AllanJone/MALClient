@@ -109,7 +109,8 @@
     </UserControl.Resources>
 
     <Grid VerticalAlignment="Stretch">
-        <Grid Background="{ThemeResource BrushHamburgerBackground}">
+        <Grid x:Name="RootHamburger" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Grid Background="#9f000000">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
@@ -769,11 +770,11 @@
             <StackPanel Grid.Row="1" Margin="{Binding BottomStackPanelMargin}" VerticalAlignment="Bottom" Width="250">
                 <StackPanel.Resources>
                     <Style TargetType="Button">
-                            <Setter Property="Padding" Value="1,0" />
-                        </Style>
-                        <Style TargetType="SymbolIcon">
-                            <Setter Property="Margin" Value="3,0,0,0" />
-                        </Style>
+                        <Setter Property="Padding" Value="1,0" />
+                    </Style>
+                    <Style TargetType="SymbolIcon">
+                        <Setter Property="Margin" Value="3,0,0,0" />
+                    </Style>
                 </StackPanel.Resources>
                 <MenuFlyoutSeparator HorizontalAlignment="Left" Margin="5,5,10,5" x:Name="BottomSeparator" />
                 <Button HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch"
@@ -961,7 +962,7 @@
                             </ToolTipService.ToolTip>
                             <SymbolIcon HorizontalAlignment="Center" VerticalAlignment="Center" Symbol="Mail"
                                                 Margin="0,0,0,2" />
-                        </Button>                        
+                        </Button>
                         <Button Command="{Binding ButtonNavigationCommand}" Visibility="{Binding MalApiSpecificButtonsVisibility}"
                                         CommandParameter="26" Background="Transparent"
                                         Width="40" Height="37" >
@@ -971,7 +972,7 @@
                             <SymbolIcon HorizontalAlignment="Center" VerticalAlignment="Center" Symbol="LeaveChat"
                                                 Margin="0,0,0,2" />
                         </Button>
-                
+
                     </StackPanel>
                 </Grid>
                 <Button HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch"
@@ -1001,4 +1002,5 @@
             </StackPanel>
         </Grid>
     </Grid>
+
 </UserControl>

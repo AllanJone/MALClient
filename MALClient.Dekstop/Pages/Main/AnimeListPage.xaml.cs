@@ -10,6 +10,7 @@ using Windows.UI.Xaml.Navigation;
 using MALClient.Models.Enums;
 using MALClient.UWP.Shared.Managers;
 using MALClient.UWP.Shared.ViewModels.Interfaces;
+using MALClient.UWP.UserControls;
 using MALClient.XShared.NavArgs;
 using MALClient.XShared.Utils;
 using MALClient.XShared.ViewModels;
@@ -466,6 +467,11 @@ namespace MALClient.UWP.Pages.Main
                 //not AU
             }
 
+        }
+
+        private void BottomCommandBar_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            new BlurHelper(BottomCommandBar);
         }
     }
 }

@@ -233,6 +233,7 @@
       <DependentUpon>SettingsSlidersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\BlurHelper.cs" />
     <Compile Include="UserControls\New\HamburgerControl.xaml.cs">
       <DependentUpon>HamburgerControl.xaml</DependentUpon>
     </Compile>

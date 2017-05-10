@@ -257,6 +257,7 @@
                     </Grid>
                     <Grid Grid.Row="1">
                         <!--Changelog-->
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="MainFrameBackground"/>
                         <Frame
                             Margin="{Binding Source={StaticResource DesktopLocator},Path=Hamburger.BottomStackPanelMargin,Converter={StaticResource BottomStackMarginToFrameMarginWithAdConverter}}"
                             x:Name="MainContent" PointerPressed="MainContent_OnPointerPressed"

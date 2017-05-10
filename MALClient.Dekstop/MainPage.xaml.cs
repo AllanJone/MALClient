@@ -1,12 +1,15 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.Devices.Input;
+using Windows.UI.Composition;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Hosting;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
@@ -16,6 +19,7 @@ using MALClient.UWP.Adapters;
 using MALClient.UWP.Shared.UserControls;
 using MALClient.UWP.Shared.ViewModels;
 using MALClient.UWP.Shared.ViewModels.Interfaces;
+using MALClient.UWP.UserControls;
 using MALClient.UWP.ViewModels;
 using MALClient.XShared.Utils;
 using MALClient.XShared.ViewModels;
@@ -31,6 +35,7 @@ namespace MALClient.UWP
     {
         private double _prevOffContntWidth;
         private Timer _timer;
+        private BlurHelper _blurHelper;
 
         public MainPage()
         {
@@ -56,6 +61,10 @@ namespace MALClient.UWP
                 StartAdsTimeMeasurements();
                 ViewModelLocator.Settings.OnAdsMinutesPerDayChanged += SettingsOnOnAdsMinutesPerDayChanged;
                 ViewModelLocator.GeneralMain.ChangelogVisibility = ResourceLocator.ChangelogProvider.NewChangelog;
+
+
+                _blurHelper = new BlurHelper(MainFrameBackground);
+
             };
         }
 
